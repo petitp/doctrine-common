@@ -20,6 +20,7 @@
 namespace Doctrine\Common\Util;
 
 use Doctrine\Common\Persistence\Proxy;
+use Doctrine\Common\Persistence\ProxyConstant;
 
 /**
  * Class and reflection related functionality for objects that
@@ -39,11 +40,11 @@ class ClassUtils
      */
     public static function getRealClass($class)
     {
-        if (false === $pos = strrpos($class, '\\'.Proxy::MARKER.'\\')) {
+        if (false === $pos = strrpos($class, '\\'.ProxyConstant::MARKER.'\\')) {
             return $class;
         }
 
-        return substr($class, $pos + Proxy::MARKER_LENGTH + 2);
+        return substr($class, $pos + ProxyConstant::MARKER_LENGTH + 2);
     }
 
     /**
@@ -104,6 +105,6 @@ class ClassUtils
      */
     public static function generateProxyClassName($className, $proxyNamespace)
     {
-        return rtrim($proxyNamespace, '\\') . '\\'.Proxy::MARKER.'\\' . ltrim($className, '\\');
+        return rtrim($proxyNamespace, '\\') . '\\'.ProxyConstant::MARKER.'\\' . ltrim($className, '\\');
     }
 }

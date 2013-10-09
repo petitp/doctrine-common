@@ -861,7 +861,7 @@ EOT;
     {
         $baseDirectory = $baseDirectory ?: $this->proxyDirectory;
 
-        return rtrim($baseDirectory, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . Proxy::MARKER
+        return rtrim($baseDirectory, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . ProxyConstant::MARKER
             . str_replace('\\', '', $className) . '.php';
     }
 
