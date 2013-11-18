@@ -23,6 +23,7 @@ use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Util\ClassUtils;
 use Doctrine\Common\Proxy\Exception\InvalidArgumentException;
 use Doctrine\Common\Proxy\Exception\UnexpectedValueException;
+use Doctrine\Common\Persistence\ProxyConstant;
 
 /**
  * This factory is used to generate proxy classes.
